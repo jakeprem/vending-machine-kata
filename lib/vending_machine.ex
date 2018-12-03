@@ -1,18 +1,18 @@
-defmodule VendingMachine do
-  @moduledoc """
-  Documentation for VendingMachine.
-  """
+# defmodule VendingMachine do
+#   @moduledoc """
+#   Documentation for VendingMachine.
+#   """
 
-  @doc """
-  Hello world.
+#   @doc """
+#   Hello world.
 
-  ## Examples
+#   ## Examples
 
-      iex> VendingMachine.hello()
-      :world
+#       iex> VendingMachine.hello()
+#       :world
 
-  """
-  def hello do
-    :world
-  end
-end
+#   """
+#   def hello do
+#     :world
+#   end
+# end
