@@ -1,7 +1,7 @@
 defmodule VendingMachine.ServerTest do
   use ExUnit.Case, async: true
 
-  alias VendingMachine.Server
+  alias VendingMachine.Controller.Server
 
   @quarter {:coin, 5.67, 24.257}
   @nickel {:coin, 5.0, 21.209}
@@ -9,7 +9,7 @@ defmodule VendingMachine.ServerTest do
   @invalid {:coin, 10, 3}
 
   setup do
-    vending_machine = start_supervised!(VendingMachine.Server)
+    vending_machine = start_supervised!(VendingMachine.Controller.Server)
     %{vending_machine: vending_machine}
   end
 
@@ -46,5 +46,19 @@ defmodule VendingMachine.ServerTest do
 
     assert Server.get_coin_return() == [@invalid]
     assert Server.get_display() == "INSERT COIN"
+  end
+
+  test "select product with enough money" do
+    # Should dispense product and update display to Thank You
+    # Can use a timed send to return display to INSERT COIN after
+    # a set amount of time
+  end
+
+  test "select product with not enough money" do
+    # Should update display to PRICE $X.xx
+    # Can do a timeout to return to INSERT COIN,
+    # or possibly toggle?
+    # Looks like we're gonna have to design the display
+    # soon
   end
 end

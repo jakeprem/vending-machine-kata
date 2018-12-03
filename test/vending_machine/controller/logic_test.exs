@@ -1,7 +1,7 @@
 defmodule VendingMachine.LogicTest do
   use ExUnit.Case, async: true
 
-  import VendingMachine.Logic
+  import VendingMachine.Controller.Logic
 
   test "does this even work" do
     assert true

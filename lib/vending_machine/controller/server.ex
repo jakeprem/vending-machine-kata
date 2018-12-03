@@ -1,7 +1,7 @@
-defmodule VendingMachine.Server do
+defmodule VendingMachine.Controller.Server do
   use GenServer
 
-  alias VendingMachine.Logic
+  alias VendingMachine.Controller.Logic
 
   defmodule State do
     defstruct coins: [], display: "INSERT COIN", return: []

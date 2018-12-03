@@ -1,4 +1,4 @@
-defmodule VendingMachine.Logic do
+defmodule VendingMachine.Controller.Logic do
   @coin_values %{
     quarter: 0.25,
     nickel: 0.05,
