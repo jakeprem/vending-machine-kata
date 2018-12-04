@@ -16,4 +16,18 @@ defmodule VendingMachine.Controller.Logic do
       acc + @coin_values[coin]
     end)
   end
+
+  def get_coin_value_display(coins) do
+    val = calculate_value(coins)
+
+    split = String.split("$#{val}", ".")
+
+    case split do
+      [dollars, cents] ->
+        dollars <> "." <> String.pad_trailing(cents, 2, "0")
+      [dollars] ->
+        dollars <> ".00"
+    end
+
+  end
 end

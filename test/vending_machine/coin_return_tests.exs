@@ -3,11 +3,6 @@ defmodule VendingMachine.ServerTest do
 
   alias VendingMachine.CoinReturn
 
-  setup do
-    coin_return = start_supervised!(VendingMachine.CoinReturn)
-    %{coin_return: coin_return}
-  end
-
   test "adds coins correctly" do
     assert Agent.get(VendingMachine.CoinReturn, fn x -> x end) == []
 

@@ -1,8 +1,8 @@
 defmodule VendingMachine.Display do
   use Agent
 
-  def start_link(_opts) do
-    Agent.start_link(fn -> "UNINITIALIZED" end, name: __MODULE__)
+  def start_link(opts) do
+    Agent.start_link(fn -> opts[:starting_val] || "UNINITIALIZED" end, name: __MODULE__)
   end
 
   # A GenServer would probably be more flexible and clearer here
@@ -15,6 +15,7 @@ defmodule VendingMachine.Display do
   end
 
   def set(new_display) do
+    IO.inspect(new_display)
     Agent.update(__MODULE__, fn _display -> new_display end)
   end
 end

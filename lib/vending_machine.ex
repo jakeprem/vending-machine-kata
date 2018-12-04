@@ -1,18 +1,16 @@
-# defmodule VendingMachine do
-#   @moduledoc """
-#   Documentation for VendingMachine.
-#   """
+defmodule VendingMachine do
+  alias VendingMachine.Controller.Server
+  alias VendingMachine.{
+    Display,
+    CoinReturn,
+    DropBox
+  }
 
-#   @doc """
-#   Hello world.
+  def insert_coin(coin) do
+    Server.insert_coin(coin)
+  end
 
-#   ## Examples
-
-#       iex> VendingMachine.hello()
-#       :world
-
-#   """
-#   def hello do
-#     :world
-#   end
-# end
+  def get_display do
+    Display.get()
+  end
+end

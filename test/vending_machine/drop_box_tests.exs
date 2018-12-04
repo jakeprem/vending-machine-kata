@@ -3,11 +3,6 @@ defmodule VendingMachine.ServerTest do
 
   alias VendingMachine.DropBox
 
-  setup do
-    drop_box = start_supervised!(VendingMachine.DropBox)
-    %{drop_box: drop_box}
-  end
-
   test "adds items correctly" do
     assert Agent.get(VendingMachine.DropBox, fn x -> x end) == []
 

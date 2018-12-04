@@ -9,8 +9,8 @@ defmodule VendingMachine.ServerTest do
   @invalid {:coin, 10, 3}
 
   setup do
-    vending_machine = start_supervised!(VendingMachine.Controller.Server)
-    %{vending_machine: vending_machine}
+    Application.stop(:your_app)
+    :ok = Application.start(:your_app)
   end
 
   test "displays 'INSERT COIN' when no coins inserted" do
